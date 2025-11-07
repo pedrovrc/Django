@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Bem-vindo ao App de Tarefas!</h2>
+  <p>Gerencie suas tarefas de forma simples e segura.</p>
+  <a href="{% url 'lista_tarefas' %}" class="btn btn-primary">Minhas Tarefas</a>
+  {% if user.is_authenticated %}
+    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-secondary btn-sm">Sair</button>
+    </form>
+  {% else %}
+    <a href="{% url 'login' %}" class="btn btn-success">Entrar</a>
+    <a href="{% url 'registrar' %}" class="btn btn-info">Registrar</a>
+  {% endif %}
+{% endblock %}
