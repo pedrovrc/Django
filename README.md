@@ -32,20 +32,37 @@ Este repositório reúne quatro subprojetos criados para estudo e prática com o
 	  ```
   6. Acesse a aplicação em [http://127.0.0.1:8000/](http://127.0.0.1:8000/) e o painel admin em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
+
 **2. Interatividade e Autenticação** (Diretório `Interatividade`)
-- 🟦 Próximo subprojeto a ser implementado.
-- App de tarefas com login, focando em integrar formulários, usuários e lógica de negócios.
-- Uso de Django Forms e ModelForms
-- Autenticação (login, logout, registro)
-- CRUD de tarefas atreladas ao usuário autenticado
-- Marcar tarefas como concluídas
-- Sessões e Middleware
-- Mensagens e redirecionamento (messages)
-- Permissões básicas (@login_required)
-- Estilização leve com Bootstrap
+- ✅ Subprojeto já concluído.
+- App de tarefas com login, registro de usuário, edição, exclusão e marcação de tarefas como concluídas.
+- Foco em integração de formulários, autenticação, permissões, feedback visual e estilização com Bootstrap.
+
+  **Como executar a aplicação:**
+  1. Navegue até o diretório `Interatividade`:
+	  ```powershell
+	  cd Interatividade
+	  ```
+  2. Instale as dependências (caso ainda não tenha):
+	  ```powershell
+	  pip install django
+	  ```
+  3. Realize as migrações iniciais:
+	  ```powershell
+	  python manage.py migrate
+	  ```
+  4. (Opcional) Crie um superusuário para acessar o admin:
+	  ```powershell
+	  python manage.py createsuperuser
+	  ```
+  5. Execute o servidor de desenvolvimento:
+	  ```powershell
+	  python manage.py runserver
+	  ```
+  6. Acesse a página inicial em [http://127.0.0.1:8000/](http://127.0.0.1:8000/) e o painel admin em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
 
 **3. APIs e Integração** (Diretório `API`)
-- 🟨 Subprojeto ainda em fase de espera.
+- 🟦 Próximo subprojeto a ser implementado.
 - API REST para gerenciamento de tarefas, com foco em utilizar o Django REST Framework (DRF)
 - Uso de Serializers e ViewSets
 - Rotas automáticas (DefaultRouter)
