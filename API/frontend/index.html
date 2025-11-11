@@ -1,0 +1,34 @@
+<form id="login-form">
+    <input type="text" id="username" placeholder="Usuário" required>
+    <input type="password" id="password" placeholder="Senha" required>
+    <button type="submit">Login</button>
+</form>
+<div id="token"></div>
+
+<script>
+let accessToken = '';
+
+document.getElementById('login-form').onsubmit = async function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const response = await fetch('/api/token/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
+    });
+    const data = await response.json();
+    accessToken = data.access;
+    document.getElementById('token').innerText = 'Token: ' + accessToken;
+    listarTarefas();
+};
+
+async function listarTarefas() {
+    const response = await fetch('/api/tarefas/', {
+        headers: {'Authorization': 'Bearer ' + accessToken}
+    });
+    const tarefas = await response.json();
+    // Exiba as tarefas na página
+    console.log(tarefas);
+    }
+</script>

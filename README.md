@@ -62,19 +62,41 @@ Este repositório reúne quatro subprojetos criados para estudo e prática com o
   6. Acesse a página inicial em [http://127.0.0.1:8000/](http://127.0.0.1:8000/) e o painel admin em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
 
 **3. APIs e Integração** (Diretório `API`)
-- 🟦 Próximo subprojeto a ser implementado.
-- API REST para gerenciamento de tarefas, com foco em utilizar o Django REST Framework (DRF)
-- Uso de Serializers e ViewSets
-- Rotas automáticas (DefaultRouter)
-- CRUD completo via DRF
-- Autenticação por token ou JWT (biblioteca djangorestframework-simplejwt)
-- Permissões e filtros (usuário, status da tarefa)
-- Testes de API
-- Documentação automática via Swagger ou DRF-YASG
-- Frontend simples (HTML/JS ou React) consumindo a API
+
+**3. APIs e Integração** (Diretório `API`)
+- ✅ Subprojeto já concluído.
+- API REST para gerenciamento de tarefas, com autenticação JWT, filtros, documentação automática e frontend simples para consumo da API.
+
+  **Como executar a aplicação:**
+  1. Navegue até o diretório `API`:
+	  ```powershell
+	  cd API
+	  ```
+  2. Instale as dependências (caso ainda não tenha):
+	  ```powershell
+	  pip install django djangorestframework djangorestframework-simplejwt drf-yasg django-filter
+	  ```
+  3. Realize as migrações iniciais:
+	  ```powershell
+	  python manage.py migrate
+	  ```
+  4. (Opcional) Crie um superusuário para acessar o admin:
+	  ```powershell
+	  python manage.py createsuperuser
+	  ```
+  5. Execute o servidor de desenvolvimento:
+	  ```powershell
+	  python manage.py runserver
+	  ```
+  6. Obtenha o token JWT via endpoint:
+	  ```powershell
+	  curl.exe -X POST http://127.0.0.1:8000/api/token/ -H "Content-Type: application/json" -d "{\"username\":\"seu_usuario\", \"password\":\"sua_senha\"}"
+	  ```
+  7. Acesse os endpoints da API em [http://127.0.0.1:8000/api/tarefas/](http://127.0.0.1:8000/api/tarefas/), a documentação Swagger em [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/) e o painel admin em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
+  8. (Opcional) Abra o arquivo `frontend/index.html` para testar o consumo da API via frontend simples.
 
 **4. Projeto Final** (Diretório `Projeto_Final`)
-- 🟨 Subprojeto ainda em fase de espera.
+- 🟦 Próximo subprojeto a ser implementado.
 - Sistema de blog avançado com objetivo de aprender sobre estrutura modular, deploy e boas práticas
 - Uso de organização modular (users, core, api, web)
 - Autenticação completa (reset de senha, e-mail, etc)
