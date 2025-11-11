@@ -62,8 +62,6 @@ Este repositório reúne quatro subprojetos criados para estudo e prática com o
   6. Acesse a página inicial em [http://127.0.0.1:8000/](http://127.0.0.1:8000/) e o painel admin em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
 
 **3. APIs e Integração** (Diretório `API`)
-
-**3. APIs e Integração** (Diretório `API`)
 - ✅ Subprojeto já concluído.
 - API REST para gerenciamento de tarefas, com autenticação JWT, filtros, documentação automática e frontend simples para consumo da API.
 
