@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Bem-vindo ao Sistema Blog!</h1>
+<p>Este é o projeto final de estudo Django.</p>
+<p>
+  <a href="{% url 'login' %}">Login</a> |
+  <a href="{% url 'register' %}">Registrar</a> |
+  <a href="{% url 'profile' %}">Perfil</a>
+</p>
+{% endblock %}
